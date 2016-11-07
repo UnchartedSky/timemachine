@@ -12,6 +12,12 @@ node app.js
 curl http://localhost:8081/listPosts?accessToken=YOUR_FB_ACCESS_TOKEN
 ```
 
+## How to run tests
+
+```bash
+npm test
+```
+
 ## Guide for developers
 
 ### How to get Facebook access token
