@@ -1,3 +1,6 @@
+`master`: [![Build Status](https://travis-ci.com/andromedarabbit/timemachine.svg?token=265AAhxHviCMV4xC9qkK&branch=master)](https://travis-ci.com/andromedarabbit/timemachine)
+`develop`: [![Build Status](https://travis-ci.com/andromedarabbit/timemachine.svg?token=265AAhxHviCMV4xC9qkK&branch=develop)](https://travis-ci.com/andromedarabbit/timemachine)
+
 # Time Machine
 
 Privacy protecting tool for Facebook and Twitter users.
