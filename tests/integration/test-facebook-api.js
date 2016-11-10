@@ -1,22 +1,37 @@
-var supertest = require('supertest'),
+var fibrous = require('fibrous'),
+    supertest = require('supertest'),
     assert = require('assert'),
     util = require('util'),
     facebook = require('../../lib/facebook'),
     app = require('../../app'),
-    test_users = require('./../../testsupports/test_users')
+    test_users = require('./../../testsupports/test_users');
 
-exports.list_posts = function (done) {
+
+describe('Posts', function () {
     this.timeout(10000);
 
-    test_users.getUser( function(error, result) {
-        assert.ifError(error);
-
-        const limit = 2;
-
-        supertest(app)
-            .get(util.format('/listPosts?accessToken=%s&limit=%d', result.access_token, limit))
-            .expect(200)
-            .end(done);
+    var user;
+    before(function () {
+        user = test_users.sync.getUser();
     });
 
-};
+    describe('#listPosts()', function () {
+        it('should return 200 ok', function (done) {
+            const limit = 2;
+
+            supertest(app)
+                .get(util.format('/listPosts?accessToken=%s&limit=%d', user.access_token, limit))
+                .expect(200)
+                .end(done);
+        });
+
+        it('should return 400 if no access token is provided', function (done) {
+            const limit = 2;
+
+            supertest(app)
+                .get(util.format('/listPosts?limit=%d', limit))
+                .expect(400)
+                .end(done);
+        });
+    });
+});
