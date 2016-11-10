@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var util = require('util');
-facebook = require('./lib/facebook')
+var express = require('express'),
+    app = express(),
+    util = require('util'),
+    facebook = require('./lib/facebook');
 
 app.get('/listPosts', facebook.listPosts);
 
