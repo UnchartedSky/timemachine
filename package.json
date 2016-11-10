@@ -5,10 +5,12 @@
     "winston": "^2.3.0"
   },
   "devDependencies": {
-    "mocha": "^3.1.2",
     "fb-test-users": "^0.2.0",
     "fibrous": "^0.4.0",
-    "mocha-fibers": "^1.1.1"
+    "mocha": "^3.1.2",
+    "mocha-fibers": "^1.1.1",
+    "randomstring": "^1.1.5",
+    "supertest": "^2.0.1"
   },
   "scripts": {
     "test": "node_modules/.bin/mocha $NODE_DEBUG_OPTION --ui mocha-fibers --require fibrous tests/**/*"

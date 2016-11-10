@@ -1,4 +1,5 @@
 var fibrous = require('fibrous'),
+    supertest = require('supertest'),
     assert = require('assert'),
     util = require('util'),
     facebook = require('../../lib/facebook'),
@@ -12,6 +13,8 @@ describe('Posts', function () {
     var user;
     before(function () {
         user = test_users.sync.getUser();
+
+        test_users.randomPostsSync(user, 20);
     });
 
     after(function () {
