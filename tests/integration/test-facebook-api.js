@@ -1,5 +1,4 @@
 var fibrous = require('fibrous'),
-    supertest = require('supertest'),
     assert = require('assert'),
     util = require('util'),
     facebook = require('../../lib/facebook'),
@@ -13,6 +12,10 @@ describe('Posts', function () {
     var user;
     before(function () {
         user = test_users.sync.getUser();
+    });
+
+    after(function () {
+        test_users.deleteAllUsers();
     });
 
     describe('#listPosts()', function () {
