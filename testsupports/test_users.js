@@ -1,4 +1,5 @@
-const winston = require('winston');
+const winston = require('winston'),
+    util = require('util');
 
 var fibrous = require('fibrous'),
     FBTestUsers = require('fb-test-users'),
@@ -12,12 +13,20 @@ getUser = function (created) {
     fbTestUsers.create({installed: true, permissions: ['user_posts', 'publish_actions']}, created);
 };
 
-deleteAllUsers = function () {
+deleteAllUsers = function (done) {
     fbTestUsers.list(function (error, users) {
+        if (util.isNullOrUndefined(users)) {
+            done();
+            return;
+        }
+
+        var i = 0;
+
         users.forEach(u =>
             fbTestUsers.delete(u.id, function (error, success) {
-                if (!error) {
-                    winston.error(error);
+                i++;
+                if (i == users.length) {
+                    done();
                 }
             })
         );

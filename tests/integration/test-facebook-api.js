@@ -14,19 +14,29 @@ describe('Posts', function () {
     before(function () {
         user = test_users.sync.getUser();
 
-        test_users.randomPostsSync(user, 20);
+        test_users.randomPostsSync(user, 8);
     });
 
     after(function () {
-        test_users.deleteAllUsers();
+        test_users.sync.deleteAllUsers();
     });
 
-    describe('#listPosts()', function () {
+    describe('#setAllPostsPrivate()', function () {
         it('should return 200 ok', function (done) {
             const limit = 2;
 
             supertest(app)
-                .get(util.format('/listPosts?accessToken=%s&limit=%d', user.access_token, limit))
+                .post('/setAllPostsPrivate')
+                .send({'accessToken': user.access_token, 'limit': limit})
+                .expect(200)
+                .end(done);
+        });
+
+        it('just for verifying the result', function (done) {
+            const limit = 2;
+
+            supertest(app)
+                .get(util.format('/verify?accessToken=%s&limit=%d', user.access_token, limit))
                 .expect(200)
                 .end(done);
         });
@@ -35,7 +45,8 @@ describe('Posts', function () {
             const limit = 2;
 
             supertest(app)
-                .get(util.format('/listPosts?limit=%d', limit))
+                .post('/setAllPostsPrivate')
+                .send({'accessToken': '', 'limit': limit})
                 .expect(400)
                 .end(done);
         });
