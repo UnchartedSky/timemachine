@@ -21,12 +21,12 @@ describe('Posts', function () {
         test_users.sync.deleteAllUsers();
     });
 
-    describe('#setAllPostsPrivate()', function () {
+    describe('#setPostsPrivate()', function () {
         it('should return 200 ok', function (done) {
             const limit = 2;
 
             supertest(app)
-                .post('/setAllPostsPrivate')
+                .post('/setPostsPrivate')
                 .send({'accessToken': user.access_token, 'limit': limit})
                 .expect(200)
                 .end(done);
@@ -45,7 +45,7 @@ describe('Posts', function () {
             const limit = 2;
 
             supertest(app)
-                .post('/setAllPostsPrivate')
+                .post('/setPostsPrivate')
                 .send({'accessToken': '', 'limit': limit})
                 .expect(400)
                 .end(done);
