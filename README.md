@@ -1,3 +1,8 @@
+**This project is closed due to Facebook API's limitation**
+
+* [Editing a Facebook Status not owned by the calling application](http://philippeharewood.com/editing-a-facebook-status-not-owned-by-the-calling-application/)
+* [OAuthError: [200] (#200) App cannot edit non-app posts](https://github.com/jgorset/facepy/issues/149)
+
 `master`: [![Build Status](https://travis-ci.com/andromedarabbit/timemachine.svg?token=265AAhxHviCMV4xC9qkK&branch=master)](https://travis-ci.com/andromedarabbit/timemachine)
 `develop`: [![Build Status](https://travis-ci.com/andromedarabbit/timemachine.svg?token=265AAhxHviCMV4xC9qkK&branch=develop)](https://travis-ci.com/andromedarabbit/timemachine)
 
@@ -12,7 +17,7 @@ Privacy protecting tool for Facebook and Twitter users.
 node app.js
 
 # Call the APIs
-curl http://localhost:8081/listPosts?accessToken=YOUR_FB_ACCESS_TOKEN
+http --verbose POST http://localhost:8081/setPostsPrivate limit=1 since='2016-11-13 00:00:00' until='2016-11-14 00:00:00' accessToken=${FB_ACCESS_TOKEN}
 ```
 
 ## How to run tests
