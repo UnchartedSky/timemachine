@@ -3,8 +3,8 @@
 * [Editing a Facebook Status not owned by the calling application](http://philippeharewood.com/editing-a-facebook-status-not-owned-by-the-calling-application/)
 * [OAuthError: [200] (#200) App cannot edit non-app posts](https://github.com/jgorset/facepy/issues/149)
 
-`master`: [![Build Status](https://travis-ci.com/andromedarabbit/timemachine.svg?token=265AAhxHviCMV4xC9qkK&branch=master)](https://travis-ci.com/andromedarabbit/timemachine)
-`develop`: [![Build Status](https://travis-ci.com/andromedarabbit/timemachine.svg?token=265AAhxHviCMV4xC9qkK&branch=develop)](https://travis-ci.com/andromedarabbit/timemachine)
+`master`: [![Build Status](https://travis-ci.org/andromedarabbit/timemachine.svg?branch=master)](https://travis-ci.org/andromedarabbit/timemachine)
+`develop`: [![Build Status](https://travis-ci.org/andromedarabbit/timemachine.svg?branch=develop)](https://travis-ci.org/andromedarabbit/timemachine)
 
 # Time Machine
 
